@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random boxes</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            height: 90vh;
+            width: 90vw;
+            display: flex;
+            background-color: rgb(243, 168, 71);
+        }
+        .box{display: flex;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            margin-left: 30px;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">hey</div>
+        <div class="box">can you</div>
+        <div class="box">guess</div>
+        <div class="box">my next</div>
+        <div class="box">color</div>
+    </div>
+    <script>
+        let boxes=document.querySelectorAll(".box")
+        console.dir(boxes)
+        function randomcolor(){
+            let a=Math.ceil(0+Math.random()*255)
+            let b=Math.ceil(0+Math.random()*255)
+            let c=Math.ceil(0+Math.random()*255)
+            return `rgb(${a},${b},${c})`
+        }
+        Array.from(boxes).forEach(e=>{
+            e.style.backgroundColor = randomcolor()
+    e.style.color = randomcolor()
+        })
+
+    </script>
+</body>
+</html>
